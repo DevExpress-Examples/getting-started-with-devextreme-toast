@@ -1,0 +1,32 @@
+<div id="container">
+    <div id="buttons">
+        <dx-button
+            text="Show message"
+            (onClick)="showMessage()"
+        >
+        </dx-button>
+        <dx-button
+            text="Show custom message"
+            (onClick)="showCustomMessage()"
+        >
+        </dx-button>
+    </div>
+    <dx-toast
+        [(visible)]="isVisible"
+        [width]="230"
+        [height]="50"
+        type="custom"
+    >   
+        <dxo-position
+            my="bottom"
+            at="bottom"
+            of="#container">
+        </dxo-position>
+        <div *dxTemplate="let data of 'content'">
+            <div class="flex-box">
+                <span>You have a new message &nbsp;</span>
+                <i class="dx-icon-email icon-style"></i>
+            </div>
+        </div>
+    </dx-toast>
+</div>
