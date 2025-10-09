@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ClickEvent } from 'devextreme/ui/button';
+import notify from 'devextreme/ui/notify';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +7,27 @@ import { ClickEvent } from 'devextreme/ui/button';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'Angular';
+  types = ['error', 'info', 'success', 'warning'];
 
-  counter = 0;
+  isVisible = false;
 
-  buttonText = 'Click count: 0';
+  showMessage(): void {
+    notify(
+      {
+        message: 'You have a new message',
+        width: 230,
+        position: {
+          at: 'bottom',
+          my: 'bottom',
+          of: '#container',
+        },
+      },
+      this.types[Math.floor(Math.random() * 4)],
+      500,
+    );
+  }
 
-  onClick(e: ClickEvent): void {
-    this.counter++;
-    this.buttonText = `Click count: ${this.counter}`;
+  showCustomMessage(): void {
+    this.isVisible = true;
   }
 }
