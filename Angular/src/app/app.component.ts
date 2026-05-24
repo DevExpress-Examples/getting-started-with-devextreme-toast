@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import notify from 'devextreme/ui/notify';
 
+import { DxButtonModule } from 'devextreme-angular/ui/button';
+
 @Component({
     selector: 'app-root',
+    imports: [DxButtonModule],
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
-    standalone: false
 })
 export class AppComponent {
   types = ['error', 'info', 'success', 'warning'];
