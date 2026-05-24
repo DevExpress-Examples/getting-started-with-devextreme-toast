@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import notify from 'devextreme/ui/notify';
 
 import { DxButtonModule } from 'devextreme-angular/ui/button';
+import { DxToastModule } from 'devextreme-angular/ui/toast';
 
 @Component({
     selector: 'app-root',
-    imports: [DxButtonModule],
+    imports: [DxButtonModule, DxToastModule],
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
 })
