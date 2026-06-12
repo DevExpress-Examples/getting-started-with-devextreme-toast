@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import notify from 'devextreme/ui/notify';
 
 import { DxButtonModule } from 'devextreme-angular/ui/button';
@@ -8,6 +8,7 @@ import { DxToastModule } from 'devextreme-angular/ui/toast';
     selector: 'app-root',
     imports: [DxButtonModule, DxToastModule],
     templateUrl: './app.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
